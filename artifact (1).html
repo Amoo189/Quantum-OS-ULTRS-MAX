@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <title>QMOS Ultimate v2</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <meta name="theme-color" content="#07010f" />
+  <meta name="description" content="Quantum OS Ultimate v2" />
+
+  <link rel="icon" href="SA.png" type="image/png" />
+  <link rel="shortcut icon" href="SA.png" type="image/png" />
+  <link rel="manifest" href="manifest.json" />
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="ii6k.css" />
+</head>
+<body>
+  <!-- Boot -->
+  <div id="boot">
+    <div class="boot-inner">
+      <div class="boot-ring"></div>
+      <img src="SA.png" alt="QMOS" class="boot-logo" />
+      <h1>Quantum OS</h1>
+      <p>Ultimate v2 Loading...</p>
+    </div>
+  </div>
+
+  <!-- Lock -->
+  <div id="lockScreen">
+    <div class="lock-bg"></div>
+    <div class="lock-content">
+      <div class="lock-time" id="lockTime">00:00</div>
+      <div class="lock-date" id="lockDate">---</div>
+      <h2 class="neon-title">Quantum OS</h2>
+      <p id="lockHint" class="muted">Swipe up to unlock</p>
+
+      <div id="passwordBox" class="hidden lock-pass-box">
+        <input type="password" id="lockPass" placeholder="Password" inputmode="numeric" />
+        <button class="btn" id="unlockBtn">Unlock</button>
+        <p id="lockError" class="error-text"></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Login -->
+  <div id="login">
+    <div class="login-card glass">
+      <img src="SA.png" class="login-logo" alt="logo" />
+      <h2 class="neon-title">Welcome to QMOS</h2>
+      <p class="muted">نام کاربری خود را وارد کن</p>
+      <input id="username" placeholder="Username" />
+      <button class="btn" id="loginBtn">Enter Desktop</button>
+    </div>
+  </div>
+
+  <!-- Desktop -->
+  <div id="desktop" class="desktop hidden">
+    <header class="topbar">
+      <div class="brand">
+        <span class="brand-dot"></span>
+        <span class="brand-title">QMOS Ultimate</span>
+      </div>
+
+      <div class="top-search">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <input id="appSearch" type="text" placeholder="Search apps..." />
+      </div>
+
+      <div class="top-right">
+        <span class="top-clock" id="topClock">00:00</span>
+        <button class="chip" id="quickLauncherBtn" title="Launcher">
+          <i class="fa-solid fa-rocket"></i>
+        </button>
+        <button class="chip" id="settingsBtn" title="Settings">
+          <i class="fa-solid fa-gear"></i>
+        </button>
+        <button class="chip chip-danger" id="shutdownBtn" title="Shutdown">
+          <i class="fa-solid fa-power-off"></i>
+        </button>
+      </div>
+    </header>
+
+    <section class="desktop-widgets">
+      <div class="widget glass">
+        <div class="widget-title">User</div>
+        <div class="widget-value" id="widgetUser">Guest</div>
+      </div>
+      <div class="widget glass">
+        <div class="widget-title">Time</div>
+        <div class="widget-value" id="widgetTime">00:00</div>
+      </div>
+      <div class="widget glass">
+        <div class="widget-title">Open Windows</div>
+        <div class="widget-value" id="widgetWindows">0</div>
+      </div>
+    </section>
+
+    <section class="filters" id="filters">
+      <button class="filter active" data-filter="all">All</button>
+      <button class="filter" data-filter="pinned">Pinned</button>
+      <button class="filter" data-filter="productivity">Productivity</button>
+      <button class="filter" data-filter="media">Media</button>
+      <button class="filter" data-filter="web">Web</button>
+      <button class="filter" data-filter="system">System</button>
+      <button class="filter" data-filter="games">Games</button>
+    </section>
+
+    <main id="apps" class="apps"></main>
+
+    <!-- Window Layer -->
+    <section id="windowLayer" class="window-layer"></section>
+
+    <!-- Dock -->
+    <div class="dock-wrap">
+      <nav class="dock" id="dock"></nav>
+    </div>
+  </div>
+
+  <!-- Launcher -->
+  <div id="launcher" class="launcher hidden">
+    <div class="launcher-box glass">
+      <div class="launcher-head">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <input id="launcherSearch" placeholder="Type app name..." />
+      </div>
+      <div id="launcherResults" class="launcher-results"></div>
+    </div>
+  </div>
+
+  <!-- Context Menu -->
+  <div id="contextMenu" class="context-menu hidden">
+    <button data-cm="open"><i class="fa-solid fa-folder-open"></i> Open</button>
+    <button data-cm="pin"><i class="fa-solid fa-thumbtack"></i> Pin / Unpin</button>
+    <button data-cm="dock"><i class="fa-solid fa-square-plus"></i> Add / Remove Dock</button>
+    <button data-cm="info"><i class="fa-solid fa-circle-info"></i> Info</button>
+  </div>
+
+  <audio id="welcomeMusic" preload="auto">
+    <source src="Soft Piano Dramatic Modern Classical Composition B (2).mp3" type="audio/mpeg" />
+  </audio>
+
+  <button id="pwa-exit-btn" class="pwa-exit-btn" type="button">Exit App</button>
+
+  <script src="ii6k.js"></script>
+</body>
+</html>
