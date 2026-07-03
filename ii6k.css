@@ -30,13 +30,8 @@ body{
   direction:rtl;
   color:var(--text);
 
-  /* ===== پس‌زمینه یکدست و بدون تیکه‌تیکه ===== */
-  background:
-    radial-gradient(850px 620px at 10% 10%, rgba(122, 92, 255, .16), transparent 60%),
-    radial-gradient(700px 560px at 85% 15%, rgba(0, 255, 240, .14), transparent 60%),
-    radial-gradient(850px 620px at 75% 95%, rgba(255, 43, 220, .12), transparent 58%),
-    linear-gradient(180deg,var(--bg2),var(--bg0));
-
+  /* ===== پس‌زمینه کاملاً یکدست و بدون تیکه‌تیکه ===== */
+  background: linear-gradient(180deg, #0a0018 0%, #040010 40%, #000000 100%);
   background-attachment: fixed;
   background-size: cover;
   background-repeat: no-repeat;
@@ -47,9 +42,9 @@ body{
   overflow-x:hidden;
 }
 
-/* حذف noise overlay که باعث تیکه‌تیکه شدن میشود */
+/* حذف کامل noise overlay که باعث تیکه‌تیکه شدن میشد */
 body::before{
-  display: none;
+  display: none !important;
 }
 
 .hidden{display:none!important}
@@ -558,4 +553,4 @@ textarea{min-height:180px;resize:vertical}
   .apps{grid-template-columns:repeat(2,minmax(130px,1fr));padding:12px}
   .dock-item{width:54px;height:54px}
   .lock-time{font-size:3rem}
-    }
+           }
